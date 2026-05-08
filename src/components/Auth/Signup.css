@@ -1,0 +1,85 @@
+.signup-card {
+  max-width: 500px;
+}
+
+.password-hint {
+  margin-top: 0.5rem;
+}
+
+.password-hint small {
+  color: var(--text-light);
+  font-size: 0.75rem;
+}
+
+/* Password strength indicator - optional */
+.password-strength {
+  margin-top: 0.5rem;
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.strength-bar {
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.strength-bar.weak {
+  width: 33%;
+  background: #e74c3c;
+}
+
+.strength-bar.medium {
+  width: 66%;
+  background: #f39c12;
+}
+
+.strength-bar.strong {
+  width: 100%;
+  background: #27ae60;
+}
+
+/* Animation for signup card */
+.signup-card {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Success message styling */
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 480px) {
+  .signup-card {
+    padding: 1.5rem;
+  }
+  
+  .input-icon {
+    font-size: 1rem;
+  }
+  
+  .input-wrapper input {
+    padding: 0.7rem 0.7rem 0.7rem 2.2rem;
+    font-size: 0.9rem;
+  }
+}

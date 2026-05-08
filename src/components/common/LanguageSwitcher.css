@@ -1,0 +1,50 @@
+.language-switcher {
+  background: transparent;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: var(--transition);
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.language-switcher:hover {
+  background: var(--primary-color);
+}
+
+.language-switcher:hover .lang-option {
+  color: white;
+}
+
+.lang-option {
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.lang-option.active {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.language-switcher:hover .lang-option.active {
+  color: white;
+}
+
+.lang-separator {
+  color: var(--primary-color);
+  margin: 0 0.2rem;
+}
+
+.language-switcher:hover .lang-separator {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    padding: 0.3rem 0.6rem;
+  }
+}
