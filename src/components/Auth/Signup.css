@@ -11,7 +11,7 @@
   font-size: 0.75rem;
 }
 
-/* Password strength indicator - optional */
+
 .password-strength {
   margin-top: 0.5rem;
   height: 4px;
@@ -41,12 +41,12 @@
   background: #27ae60;
 }
 
-/* Animation for signup card */
+
 .signup-card {
   animation: slideUp 0.5s ease-out;
 }
 
-/* Success message styling */
+
 .success-message {
   background: #d4edda;
   color: #155724;
@@ -68,7 +68,7 @@
   }
 }
 
-/* Additional responsive adjustments */
+
 @media (max-width: 480px) {
   .signup-card {
     padding: 1.5rem;
