@@ -2,8 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import './ProfileChoicePage.css';
-import s3 from '../awsConfig';
-import { PutObjectCommand } from "@aws-sdk/client-s3";
+
 const ProfileChoicePage = () => {
 
   const navigate = useNavigate();
@@ -30,7 +29,10 @@ const ProfileChoicePage = () => {
 
           <div
             className="choice-box"
-            onClick={() => document.getElementById('documentInput').click()}
+            // onClick={() =>
+            //   document.getElementById('documentInput').click()
+            // }
+            onClick={() => navigate('/document-upload')}
           >
             <div className="choice-icon">📄</div>
 
@@ -47,46 +49,27 @@ const ProfileChoicePage = () => {
             </p>
           </div>
 
-          <input
+          {/* <input
             type="file"
             id="documentInput"
             style={{ display: 'none' }}
             accept=".pdf,.jpg,.jpeg,.png"
-            onChange={async(e) => {
+
+            onChange={(e) => {
+
               const file = e.target.files[0];
+
               if (file) {
 
-  try {
+                localStorage.setItem(
+                  'uploadedDocument',
+                  file.name
+                );
 
-    const params = {
-      Bucket: "schemefinder-documents",
-      Key: file.name,
-      Body: await file.arrayBuffer(),
-      ContentType: file.type,
-    };
-
-    await s3.send(new PutObjectCommand(params));
-
-    alert("File uploaded successfully!");
-
-    localStorage.setItem('uploadedDocument', file.name);
-
-    navigate('/document-upload');
-
-  } catch (error) {
-
-    console.error(error);
-
-    alert("Upload failed");
-
-  }
-}
-              // if (file) {
-              //   localStorage.setItem('uploadedDocument', file.name);
-              //   navigate('/document-upload');
-              // }
+                navigate('/document-upload');
+              }
             }}
-          />
+          /> */}
 
           <div
             className="choice-box"

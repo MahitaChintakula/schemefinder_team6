@@ -10,6 +10,8 @@ import SchemeResultsPage from './components/UserProfile/SchemeResults.jsx';
 import './styles/global.css';
 import ProfileChoicePage from './pages/ProfileChoicePage';
 import DocumentUploadPage from './pages/DocumentUploadPage';
+import DocumentSchemesPage from './pages/DocumentSchemesPage';
+
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -31,6 +33,12 @@ function App() {
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/profile-choice" element={<ProfileChoicePage />} />
             <Route path="/document-upload" element={<DocumentUploadPage />} />
+
+            <Route
+              path="/document-schemes"
+              element={<DocumentSchemesPage />}
+            />
+           <Route path="/document-upload" element={<DocumentUploadPage />} />
             <Route
               path="/user-details"
               element={
