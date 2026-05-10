@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import './Navbar.css';
@@ -46,19 +47,32 @@ const Navbar = () => {
 
   return (
 
-    <nav className="navbar">
+    <motion.nav
+      className="navbar"
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
 
       <div className="nav-container">
 
-        <Link to="/" className="nav-logo">
+        <motion.div
+          whileHover={{
+            scale: 1.05
+          }}
+        >
 
-          <span className="logo-icon">🇮🇳</span>
+          <Link to="/" className="nav-logo">
 
-          <span className="logo-text">
-            {t('navbar.logo')}
-          </span>
+            <span className="logo-icon">🇮🇳</span>
 
-        </Link>
+            <span className="logo-text">
+              {t('navbar.logo')}
+            </span>
+
+          </Link>
+
+        </motion.div>
 
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
 
@@ -66,17 +80,40 @@ const Navbar = () => {
 
             <>
 
-              <Link to="/login" className="nav-link">
-                {t('navbar.login')}
-              </Link>
+              <motion.div
+                whileHover={{
+                  y: -2,
+                  scale: 1.05
+                }}
+              >
 
-              <Link to="/signup">
+                <Link
+                  to="/login"
+                  className="nav-link"
+                >
+                  {t('navbar.login')}
+                </Link>
 
-                <button className="btn-get-started">
-                  {t('navbar.getStarted')}
-                </button>
+              </motion.div>
 
-              </Link>
+              <motion.div
+                whileHover={{
+                  scale: 1.05
+                }}
+                whileTap={{
+                  scale: 0.95
+                }}
+              >
+
+                {/* <Link to="/signup">
+
+                  <button className="btn-get-started">
+                    {t('navbar.getStarted')}
+                  </button>
+
+                </Link> */}
+
+              </motion.div>
 
             </>
 
@@ -84,16 +121,34 @@ const Navbar = () => {
 
             <>
 
-              <Link to="/dashboard" className="nav-link">
-                {t('navbar.dashboard')}
-              </Link>
+              <motion.div
+                whileHover={{
+                  y: -2,
+                  scale: 1.05
+                }}
+              >
 
-              <button
+                <Link
+                  to="/dashboard"
+                  className="nav-link"
+                >
+                  {t('navbar.dashboard')}
+                </Link>
+
+              </motion.div>
+
+              <motion.button
+                whileHover={{
+                  scale: 1.05
+                }}
+                whileTap={{
+                  scale: 0.95
+                }}
                 onClick={handleLogout}
                 className="btn-logout"
               >
                 {t('navbar.logout')}
-              </button>
+              </motion.button>
 
             </>
 
@@ -101,28 +156,37 @@ const Navbar = () => {
 
          
 
-          <div onClick={handleLanguageToggle}>
+          <motion.div
+            whileHover={{
+              rotate: 5,
+              scale: 1.05
+            }}
+            onClick={handleLanguageToggle}
+          >
 
             <LanguageSwitcher />
 
-          </div>
+          </motion.div>
 
         </div>
 
-        <div
+        <motion.div
           className="hamburger"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          whileTap={{
+            scale: 0.9
+          }}
         >
 
           <span></span>
           <span></span>
           <span></span>
 
-        </div>
+        </motion.div>
 
       </div>
 
-    </nav>
+    </motion.nav>
 
   );
 };

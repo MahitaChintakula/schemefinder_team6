@@ -7,49 +7,76 @@
     "dashboard": "Dashboard",
     "logout": "Logout"
   },
+
   "hero": {
     "title": "INDIA'S CITIZEN",
     "titleHighlight": "SCHEME FINDER",
+
     "subtitle": "Find every government scheme",
     "subtitleAccent": "you deserve.",
+
     "description": "Tell us a few details about yourself - age, income, occupation, state - and we'll match you with central & state government schemes you may be eligible for. Free, private, and built for every Indian citizen.",
+
     "primaryBtn": "Find My Schemes →",
-    "secondaryBtn": "Browse all schemes"
+    "secondaryBtn": "Browse all schemes",
+
+    "scheme1": "PM Awas Yojana",
+    "scheme2": "PM-KISAN",
+    "scheme3": "Scholarship",
+    "scheme4": "Bima Yojana",
+    "scheme5": "Post Matrix Scholarship",
+    "scheme6": "Beti Bachao Beti Padhao",
+    "scheme7": "Ayushman Bharat",
+    "scheme8": "Sukanya Samriddhi",
+    "scheme9": "Mudra Yojana",
+    "scheme10": "Ujjawala Yojana"
   },
+
   "howItWorks": {
     "title": "How it works",
     "subtitle": "Three simple steps. No paperwork. No middlemen.",
+
     "step1": {
       "title": "Share your details",
       "description": "Fill a short form - age, gender, state, income, and supporting documents."
     },
+
     "step2": {
       "title": "Get matched instantly",
       "description": "Our rule-based engine compares your profile against scheme eligibility criteria and ranks the best matches."
     },
+
     "step3": {
       "title": "Apply with confidence",
       "description": "Read benefits, required documents, and direct links to the official government portals to apply."
     },
+
     "cta": {
       "title": "Ready to discover your benefits?",
       "description": "Takes less than 2 minutes. Your data stays private and is used only to match you with relevant schemes.",
       "button": "Find My Schemes →"
     }
   },
+
   "login": {
     "title": "Welcome back",
     "subtitle": "Sign in to view your matched schemes.",
+
     "email": "Email",
     "emailPlaceholder": "you@example.com",
+
     "password": "Password",
     "passwordPlaceholder": "Enter your password",
+
     "rememberMe": "Remember me",
     "forgotPassword": "Forgot password?",
+
     "signIn": "Sign in",
     "signingIn": "Signing in...",
+
     "noAccount": "New here?",
     "createAccount": "Create an account",
+
     "errors": {
       "emailRequired": "Email is required",
       "emailInvalid": "Email is invalid",
@@ -57,20 +84,28 @@
       "passwordMin": "Password must be at least 6 characters"
     }
   },
+
   "signup": {
     "title": "Create your account",
     "subtitle": "Save matches and bookmark schemes for later.",
+
     "fullName": "Full name",
     "fullNamePlaceholder": "Anjali Sharma",
+
     "email": "Email",
     "emailPlaceholder": "you@example.com",
+
     "password": "Password",
     "passwordPlaceholder": "At least 6 characters",
+
     "passwordHint": "Must contain at least one uppercase letter and one number",
+
     "createAccount": "Create account",
     "creatingAccount": "Creating account...",
+
     "hasAccount": "Already a member?",
     "signIn": "Sign in",
+
     "errors": {
       "nameRequired": "Full name is required",
       "nameMin": "Name must be at least 3 characters",
@@ -81,16 +116,21 @@
       "passwordStrength": "Password must contain at least one uppercase letter and one number"
     }
   },
+
   "userProfile": {
     "title": "Tell us about yourself",
     "subtitle": "Fill your details to find eligible government schemes",
+
     "personalInfo": "Personal Information",
     "financialInfo": "Financial Information",
     "professionalInfo": "Professional Information",
+
     "fullName": "Full Name",
     "fullNamePlaceholder": "Enter your full name",
+
     "category": "Category",
     "categoryPlaceholder": "Select your category",
+
     "categories": {
       "general": "General",
       "obc": "OBC",
@@ -98,10 +138,13 @@
       "st": "ST",
       "ews": "EWS"
     },
+
     "location": "Location (State/District)",
     "locationPlaceholder": "e.g., Telangana, Hyderabad",
+
     "annualIncome": "Annual Income (₹)",
     "annualIncomePlaceholder": "Enter your annual income",
+
     "incomeRanges": {
       "below1L": "Below ₹1,00,000",
       "1Lto2L": "₹1,00,000 - ₹2,00,000",
@@ -109,16 +152,21 @@
       "5Lto10L": "₹5,00,000 - ₹10,00,000",
       "above10L": "Above ₹10,00,000"
     },
+
     "age": "Age",
     "agePlaceholder": "Enter your age",
+
     "gender": "Gender",
+
     "genders": {
       "male": "Male",
       "female": "Female",
       "other": "Other"
     },
+
     "occupation": "Occupation",
     "occupationPlaceholder": "Select your occupation",
+
     "occupations": {
       "student": "Student",
       "farmer": "Farmer",
@@ -130,11 +178,15 @@
       "retired": "Retired",
       "other": "Other"
     },
+
     "degree": "Current Degree / Course",
     "degreePlaceholder": "e.g., B.Tech, BA, B.Com, M.Sc, etc.",
+
     "degreeHint": "Please specify your degree or course of study",
+
     "submitBtn": "Find Eligible Schemes",
     "submitting": "Finding schemes...",
+
     "errors": {
       "fullNameRequired": "Full name is required",
       "categoryRequired": "Please select your category",
@@ -146,7 +198,9 @@
       "occupationRequired": "Please select your occupation",
       "degreeRequired": "Please enter your degree/course"
     },
+
     "success": "Profile saved successfully! Finding eligible schemes...",
+
     "progress": {
       "step1": "Personal Details",
       "step2": "Financial Details",

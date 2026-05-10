@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./DocumentUploadPage.css";
 
 const DocumentUploadPage = () => {
@@ -120,8 +121,32 @@ const DocumentUploadPage = () => {
 
       
 
-      let matchedSchemes =
-        parsedData.eligibleSchemes || [];
+      let matchedSchemes = [];
+
+      if (Array.isArray(parsedData?.eligibleSchemes)) {
+
+        matchedSchemes =
+          parsedData.eligibleSchemes;
+
+      }
+
+      else if (
+        parsedData?.body &&
+        typeof parsedData.body === "string"
+      ) {
+
+        const bodyData =
+          JSON.parse(parsedData.body);
+
+        matchedSchemes =
+          bodyData.eligibleSchemes || [];
+
+      }
+
+      console.log(
+        "FINAL MATCHED SCHEMES:",
+        matchedSchemes
+      );
 
 
       matchedSchemes = matchedSchemes.map((scheme) => {
@@ -241,17 +266,55 @@ const DocumentUploadPage = () => {
 
   return (
 
-    <div className="document-upload-container">
+    <motion.div
+      className="document-upload-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
 
-      <div className="document-upload-card">
+      <motion.div
+        className="document-upload-card"
+        initial={{
+          y: 40,
+          opacity: 0
+        }}
+        animate={{
+          y: 0,
+          opacity: 1
+        }}
+        transition={{
+          duration: 0.7
+        }}
+      >
 
-        <h1 className="document-upload-title">
+        <motion.h1
+          className="document-upload-title"
+          initial={{
+            scale: 0.9,
+            opacity: 0
+          }}
+          animate={{
+            scale: 1,
+            opacity: 1
+          }}
+          transition={{
+            duration: 0.6
+          }}
+        >
           📄 Document Upload Page
-        </h1>
+        </motion.h1>
 
-        <p className="document-upload-subtitle">
+        <motion.p
+          className="document-upload-subtitle"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: 0.3
+          }}
+        >
           Upload Aadhaar document to find eligible schemes
-        </p>
+        </motion.p>
 
         <input
           type="file"
@@ -261,17 +324,29 @@ const DocumentUploadPage = () => {
 
         <br />
 
-        <button
+        <motion.button
+          whileHover={{
+            scale: 1.05
+          }}
+          whileTap={{
+            scale: 0.95
+          }}
           onClick={handleUpload}
           disabled={loading}
           className="document-upload-button"
         >
 
-          {loading
-            ? "Processing..."
-            : "Upload & Find Schemes"}
+          {loading ? (
 
-        </button>
+            <div className="loader"></div>
+
+          ) : (
+
+            "Upload & Find Schemes"
+
+          )}
+
+        </motion.button>
 
         {error && (
           <p className="document-upload-error">
@@ -279,9 +354,9 @@ const DocumentUploadPage = () => {
           </p>
         )}
 
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
   );
 };
 
