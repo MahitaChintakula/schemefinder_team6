@@ -1,0 +1,12 @@
+{
+  "Tables": [
+    {
+      "TableName": "Users",
+      "PartitionKey": "email"
+    },
+    {
+      "TableName": "schemes",
+      "PartitionKey": "scheme_id"
+    }
+  ]
+}
