@@ -34,7 +34,7 @@ const Signup = () => {
       [name]: value,
     }));
 
-    // Clear errors while typing
+   
     if (errors[name]) {
 
       setErrors((prev) => ({
@@ -50,7 +50,7 @@ const Signup = () => {
 
     const newErrors = {};
 
-    // Full name validation
+   
     if (!formData.fullName) {
 
       newErrors.fullName =
@@ -64,7 +64,7 @@ const Signup = () => {
         t('signup.errors.nameMin');
     }
 
-    // Email validation
+   
     if (!formData.email) {
 
       newErrors.email =
@@ -78,7 +78,7 @@ const Signup = () => {
         t('signup.errors.emailInvalid');
     }
 
-    // Password validation
+   
     if (!formData.password) {
 
       newErrors.password =
@@ -124,7 +124,7 @@ const Signup = () => {
 
     try {
 
-      // Create user object
+      
       const newUser = {
 
         fullName: formData.fullName,
