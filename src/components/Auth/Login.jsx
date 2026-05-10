@@ -3,7 +3,7 @@
 // import { useLanguage } from '../../contexts/LanguageContext';
 // import { loginUser } from '../../services/api';
 // import './Login.css';
-
+// import loginIllustration from '../../assets/Project_image.png';
 // const Login = () => {
 
 //   const navigate = useNavigate();
@@ -32,7 +32,6 @@
 //       [name]: value,
 //     }));
 
-//     // Clear error while typing
 //     if (errors[name]) {
 
 //       setErrors((prev) => ({
@@ -48,7 +47,6 @@
 
 //     const newErrors = {};
 
-//     // Email validation
 //     if (!formData.email) {
 
 //       newErrors.email =
@@ -62,7 +60,10 @@
 //         t('login.errors.emailInvalid');
 //     }
 
-//     // Password validation
+// <<<<<<< HEAD
+   
+// =======
+// >>>>>>> a0e5505 (latest modify)
 //     if (!formData.password) {
 
 //       newErrors.password =
@@ -104,7 +105,6 @@
 //         formData
 //       );
 
-//       // Send login request
 //       const response =
 //         await loginUser({
 
@@ -118,12 +118,10 @@
 //         response
 //       );
 
-//       // Check Lambda response
 //       if (
 //         response.statusCode === 200
 //       ) {
 
-//         // Store session
 //         localStorage.setItem(
 //           'isLoggedIn',
 //           'true'
@@ -149,7 +147,10 @@
 
 //         setLoading(false);
 
-//         // Navigate after login
+// <<<<<<< HEAD
+       
+// =======
+// >>>>>>> a0e5505 (latest modify)
 //         navigate('/profile-choice');
 
 //       } else {
@@ -179,168 +180,184 @@
 
 //   return (
 
-//     <div className="auth-container">
+//    // <div className="auth-container">
+//   <div className="login-container">
 
-//       <div className="auth-card">
+//       <div className="login-layout">
 
-//         <div className="auth-header">
+//         {/* LEFT SECTION */}
 
-//           <h2>
-//             {t('login.title')}
-//           </h2>
+// <div className="login-left">
 
-//           <p>
-//             {t('login.subtitle')}
-//           </p>
+//   <img
+//     src={loginIllustration}
+//     alt="SchemeFinder Login"
+//     className="login-side-image"
+//   />
 
-//         </div>
+// </div>
+//         {/* RIGHT SECTION */}
 
-//         <form
-//           onSubmit={handleSubmit}
-//           className="auth-form"
-//         >
+//         <div className="auth-card">
 
-//           <div className="form-group">
+//           <div className="login-lock">
+//             🔒
+//           </div>
 
-//             <label htmlFor="email">
+//           <div className="auth-header">
 
-//               {t('login.email')}
+//             <h2>
+//               {t('login.title')}
+//             </h2>
 
-//             </label>
-
-//             <div className="input-wrapper">
-
-//               <span className="input-icon">
-//               </span>
-
-//               <input
-//                 type="email"
-//                 id="email"
-//                 name="email"
-//                 placeholder={
-//                   t('login.emailPlaceholder')
-//                 }
-//                 value={formData.email}
-//                 onChange={handleChange}
-//                 className={
-//                   errors.email
-//                     ? 'error'
-//                     : ''
-//                 }
-//               />
-
-//             </div>
-
-//             {errors.email && (
-
-//               <span className="error-message">
-
-//                 {errors.email}
-
-//               </span>
-//             )}
+//             <p>
+//               {t('login.subtitle')}
+//             </p>
 
 //           </div>
 
-//           <div className="form-group">
+//           <form
+//             onSubmit={handleSubmit}
+//             className="auth-form"
+//           >
 
-//             <label htmlFor="password">
+//             <div className="form-group">
 
-//               {t('login.password')}
+//               <label htmlFor="email">
 
-//             </label>
+//                 {t('login.email')}
 
-//             <div className="input-wrapper">
+//               </label>
 
-//               <span className="input-icon">
-//               </span>
+//               <div className="input-wrapper">
 
-//               <input
-//                 type="password"
-//                 id="password"
-//                 name="password"
-//                 placeholder={
-//                   t('login.passwordPlaceholder')
-//                 }
-//                 value={formData.password}
-//                 onChange={handleChange}
-//                 className={
-//                   errors.password
-//                     ? 'error'
-//                     : ''
-//                 }
-//               />
+//                 <input
+//                   type="email"
+//                   id="email"
+//                   name="email"
+//                   placeholder={
+//                     t('login.emailPlaceholder')
+//                   }
+//                   value={formData.email}
+//                   onChange={handleChange}
+//                   className={
+//                     errors.email
+//                       ? 'error'
+//                       : ''
+//                   }
+//                 />
+
+//               </div>
+
+//               {errors.email && (
+
+//                 <span className="error-message">
+
+//                   {errors.email}
+
+//                 </span>
+//               )}
 
 //             </div>
 
-//             {errors.password && (
+//             <div className="form-group">
 
-//               <span className="error-message">
+//               <label htmlFor="password">
 
-//                 {errors.password}
+//                 {t('login.password')}
 
-//               </span>
-//             )}
+//               </label>
 
-//           </div>
+//               <div className="input-wrapper">
 
-//           <div className="form-options">
+//                 <input
+//                   type="password"
+//                   id="password"
+//                   name="password"
+//                   placeholder={
+//                     t('login.passwordPlaceholder')
+//                   }
+//                   value={formData.password}
+//                   onChange={handleChange}
+//                   className={
+//                     errors.password
+//                       ? 'error'
+//                       : ''
+//                   }
+//                 />
 
-//             <label className="checkbox-label">
+//               </div>
 
-//               <input type="checkbox" />
+//               {errors.password && (
+
+//                 <span className="error-message">
+
+//                   {errors.password}
+
+//                 </span>
+//               )}
+
+//             </div>
+
+//             <div className="form-options">
+
+//               <label className="checkbox-label">
+
+//                 <input type="checkbox" />
+
+//                 {' '}
+
+//                 {t('login.rememberMe')}
+
+//               </label>
+
+//               <Link
+//                 to="/forgot-password"
+//                 className="forgot-link"
+//               >
+
+//                 {t('login.forgotPassword')}
+
+//               </Link>
+
+//             </div>
+
+//             <button
+//               type="submit"
+//               className="auth-btn"
+//               disabled={loading}
+//             >
+
+//               {loading
+
+//                 ? t('login.signingIn')
+
+//                 : t('login.signIn')}
+
+//             </button>
+
+//           </form>
+
+//           <div className="auth-footer">
+
+//             <p>
+
+//               {t('login.noAccount')}
 
 //               {' '}
 
-//               {t('login.rememberMe')}
+//               <Link
+//                 to="/signup"
+//                 className="auth-link"
+//               >
 
-//             </label>
+//                 {t('login.createAccount')}
 
-//             <Link
-//               to="/forgot-password"
-//               className="forgot-link"
-//             >
+//               </Link>
 
-//               {t('login.forgotPassword')}
-
-//             </Link>
+//             </p>
 
 //           </div>
-
-//           <button
-//             type="submit"
-//             className="auth-btn"
-//             disabled={loading}
-//           >
-
-//             {loading
-
-//               ? t('login.signingIn')
-
-//               : t('login.signIn')}
-
-//           </button>
-
-//         </form>
-
-//         <div className="auth-footer">
-
-//           <p>
-
-//             {t('login.noAccount')}
-
-//             {' '}
-
-//             <Link
-//               to="/signup"
-//               className="auth-link"
-//             >
-
-//               {t('login.createAccount')}
-
-//             </Link>
-
-//           </p>
 
 //         </div>
 
@@ -357,6 +374,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { loginUser } from '../../services/api';
 import './Login.css';
 import loginIllustration from '../../assets/Project_image.png';
+
 const Login = () => {
 
   const navigate = useNavigate();
@@ -525,22 +543,22 @@ const Login = () => {
 
   return (
 
-   // <div className="auth-container">
-  <div className="login-container">
+    <div className="login-container">
 
       <div className="login-layout">
 
         {/* LEFT SECTION */}
 
-<div className="login-left">
+        <div className="login-left">
 
-  <img
-    src={loginIllustration}
-    alt="SchemeFinder Login"
-    className="login-side-image"
-  />
+          <img
+            src={loginIllustration}
+            alt="SchemeFinder Login"
+            className="login-side-image"
+          />
 
-</div>
+        </div>
+
         {/* RIGHT SECTION */}
 
         <div className="auth-card">

@@ -251,23 +251,7 @@
   padding: 2rem;
   position: relative;
 } */
- .login-container {
-  min-height: calc(100vh - 70px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-
-  background: linear-gradient(
-      rgba(255,255,255,0.75),
-      rgba(255,255,255,0.75)
-    ),
-    url('/src/assets/login-bg.png');
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+ 
 .auth-container::before {
   content: "";
   position: absolute;
