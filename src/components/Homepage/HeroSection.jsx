@@ -23,14 +23,7 @@ const HeroSection = () => {
             {t('hero.description')}
           </p>
           
-          {/* <div className="hero-buttons">
-            <button className="btn-primary">
-              {t('hero.primaryBtn')}
-            </button>
-            <button className="btn-secondary">
-              {t('hero.secondaryBtn')}
-            </button>
-          </div> */}
+         
         </div>
         
         <div className="hero-image">
