@@ -1,6 +1,5 @@
 import { ENDPOINTS, API_BASE_URL } from '../config/api';
 
-// SIGNUP
 export const signupUser = async (userData) => {
 
   const response = await fetch(
@@ -18,7 +17,6 @@ export const signupUser = async (userData) => {
 
   const data = await response.json();
 
-  // Parse Lambda body
   if (data.body) {
     data.body = JSON.parse(data.body);
   }
@@ -26,7 +24,7 @@ export const signupUser = async (userData) => {
   return data;
 };
 
-// LOGIN
+
 export const loginUser = async (userData) => {
 
   const response = await fetch(
@@ -44,7 +42,6 @@ export const loginUser = async (userData) => {
 
   const data = await response.json();
 
-  // Parse Lambda body
   if (data.body) {
     data.body = JSON.parse(data.body);
   }
@@ -52,7 +49,6 @@ export const loginUser = async (userData) => {
   return data;
 };
 
-// GET ALL SCHEMES
 export const getAllSchemes = async () => {
 
   const response = await fetch(
@@ -66,7 +62,7 @@ export const getAllSchemes = async () => {
   return response.json();
 };
 
-// MATCH SCHEMES
+
 export const matchSchemes = async (
   userData
 ) => {
@@ -91,7 +87,7 @@ export const matchSchemes = async (
   return response.json();
 };
 
-// SAVE PROFILE
+
 export const saveProfile = async (
   profileData
 ) => {
