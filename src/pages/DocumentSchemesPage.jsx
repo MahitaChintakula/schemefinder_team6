@@ -233,7 +233,7 @@
 // };
 
 // export default DocumentSchemesPage;
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const DocumentSchemesPage = () => {
@@ -241,6 +241,42 @@ const DocumentSchemesPage = () => {
   const location = useLocation();
 
   const schemes = location.state?.schemes || [];
+
+  const [language, setLanguage] = useState(
+
+    localStorage.getItem("language") || "en"
+
+  );
+
+  useEffect(() => {
+
+    const storedLanguage =
+      localStorage.getItem("language");
+
+    if (storedLanguage) {
+
+      setLanguage(storedLanguage);
+
+    }
+
+  }, []);
+
+  const toggleLanguage = () => {
+
+    const newLanguage =
+
+      language === "en"
+        ? "te"
+        : "en";
+
+    setLanguage(newLanguage);
+
+    localStorage.setItem(
+      "language",
+      newLanguage
+    );
+
+  };
 
   return (
 
@@ -252,24 +288,58 @@ const DocumentSchemesPage = () => {
       }}
     >
 
+      {/* LANGUAGE BUTTON */}
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          marginBottom: "20px"
+        }}
+      >
+
+        <button
+          onClick={toggleLanguage}
+          style={{
+            padding: "10px 18px",
+            borderRadius: "20px",
+            border: "1px solid #0d3b66",
+            backgroundColor: "white",
+            cursor: "pointer",
+            fontWeight: "bold"
+          }}
+        >
+          {language === "en"
+            ? "తెలుగు"
+            : "English"}
+        </button>
+
+      </div>
+
       <h1
         style={{
           textAlign: "center",
           marginBottom: "10px",
-          color: "#333"
+          color: "#333",
+          lineHeight: "1.5"
         }}
       >
-        Your Eligible Government Schemes
+        {language === "en"
+          ? "Your Eligible Government Schemes"
+          : "మీకు అర్హమైన ప్రభుత్వ పథకాలు"}
       </h1>
 
       <p
         style={{
           textAlign: "center",
           marginBottom: "40px",
-          color: "#666"
+          color: "#666",
+          lineHeight: "1.8"
         }}
       >
-        Based on your uploaded document
+        {language === "en"
+          ? "Based on your uploaded document"
+          : "మీరు అప్లోడ్ చేసిన డాక్యుమెంట్ ఆధారంగా"}
       </p>
 
       <div
@@ -295,16 +365,52 @@ const DocumentSchemesPage = () => {
             <h2
               style={{
                 color: "#0d3b66",
-                marginBottom: "15px"
+                marginBottom: "15px",
+                lineHeight: "1.5"
               }}
             >
-              {scheme.scheme_name}
+              {language === "en"
+
+                ? scheme.scheme_name
+
+                : scheme.scheme_name ===
+                  "Ayushman Bharat Yojana"
+
+                ? "ఆయుష్మాన్ భారత్ యోజన"
+
+                : scheme.scheme_name ===
+                  "National Means Cum Merit Scholarship"
+
+                ? "జాతీయ ప్రతిభా విద్యార్థి వేతన పథకం"
+
+                : scheme.scheme_name ===
+                  "Kanya Sumangala Yojana"
+
+                ? "కన్యా సుమంగళ యోజన"
+
+                : scheme.scheme_name ===
+                  "Beti Bachao Beti Padhao"
+
+                ? "బేటీ బచావో బేటీ పడావో"
+
+                : scheme.scheme_name ===
+                  "Pradhan Mantri Jan Dhan Yojana"
+
+                ? "ప్రధాన మంత్రి జన ధన్ యోజన"
+
+                : scheme.scheme_name ===
+                  "Balika Samridhi Yojana"
+
+                ? "బాలికా సమృద్ధి యోజన"
+
+                : scheme.scheme_name}
             </h2>
 
             <p
               style={{
                 color: "#666",
-                marginBottom: "20px"
+                marginBottom: "20px",
+                lineHeight: "1.7"
               }}
             >
               {scheme.description}
@@ -312,10 +418,13 @@ const DocumentSchemesPage = () => {
 
             <h3
               style={{
-                marginBottom: "10px"
+                marginBottom: "10px",
+                lineHeight: "1.6"
               }}
             >
-              Required Documents:
+              {language === "en"
+                ? "Required Documents:"
+                : "అవసరమైన పత్రాలు:"}
             </h3>
 
             <ul
@@ -358,33 +467,6 @@ const DocumentSchemesPage = () => {
               )}
             </ul>
 
-            <div
-              style={{
-                marginTop: "15px",
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "10px"
-              }}
-            >
-
-              {(scheme.tags || []).map((tag, i) => (
-
-                <span
-                  key={i}
-                  style={{
-                    backgroundColor: "#eee",
-                    padding: "5px 10px",
-                    borderRadius: "10px",
-                    fontSize: "12px"
-                  }}
-                >
-                  {tag}
-                </span>
-
-              ))}
-
-            </div>
-
             <button
               onClick={() => {
 
@@ -413,10 +495,13 @@ const DocumentSchemesPage = () => {
                 border: "none",
                 padding: "10px 20px",
                 borderRadius: "10px",
-                cursor: "pointer"
+                cursor: "pointer",
+                lineHeight: "1.5"
               }}
             >
-              Apply Now →
+              {language === "en"
+                ? "Apply Now →"
+                : "ఇప్పుడే దరఖాస్తు చేయండి →"}
             </button>
 
           </div>
