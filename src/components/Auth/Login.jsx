@@ -48,7 +48,7 @@ const Login = () => {
 
     const newErrors = {};
 
-    // Email validation
+    
     if (!formData.email) {
 
       newErrors.email =
@@ -62,7 +62,7 @@ const Login = () => {
         t('login.errors.emailInvalid');
     }
 
-    // Password validation
+   
     if (!formData.password) {
 
       newErrors.password =
@@ -104,7 +104,6 @@ const Login = () => {
         formData
       );
 
-      // Send login request
       const response =
         await loginUser({
 
@@ -118,7 +117,6 @@ const Login = () => {
         response
       );
 
-      // Check Lambda response
       if (
         response.statusCode === 200
       ) {
@@ -149,7 +147,7 @@ const Login = () => {
 
         setLoading(false);
 
-        // Navigate after login
+       
         navigate('/profile-choice');
 
       } else {
