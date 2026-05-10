@@ -9,7 +9,6 @@ const SchemeResults = () => {
 
   const location = useLocation();
 
-  // Safe array handling
   const schemes = Array.isArray(
     location.state?.matchedSchemes
   )
