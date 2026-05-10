@@ -1,4 +1,4 @@
-/* PAGE */
+
 
 .document-upload-container {
   min-height: 100vh;
@@ -9,7 +9,7 @@
   padding: 40px;
 }
 
-/* CARD */
+
 
 .document-upload-card {
   background: white;
@@ -21,7 +21,7 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* TITLE */
+
 
 .document-upload-title {
   font-size: 52px;
@@ -30,7 +30,7 @@
   font-weight: 700;
 }
 
-/* SUBTITLE */
+
 
 .document-upload-subtitle {
   color: #666;
@@ -38,14 +38,14 @@
   margin-bottom: 40px;
 }
 
-/* FILE INPUT */
+
 
 .document-upload-input {
   margin-bottom: 30px;
   font-size: 16px;
 }
 
-/* BUTTON */
+
 
 .document-upload-button {
   background: linear-gradient(to right, #0f4c75, #f08a24);
@@ -63,7 +63,6 @@
   opacity: 0.95;
 }
 
-/* ERROR */
 
 .document-upload-error {
   margin-top: 20px;
