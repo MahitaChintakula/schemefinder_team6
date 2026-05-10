@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React, { useState, useEffect } from "react";
 // import { useLocation } from "react-router-dom";
 // import { motion } from 'framer-motion';
@@ -626,6 +627,8 @@
 // };
 
 // export default DocumentSchemesPage;
+=======
+>>>>>>> 4d83b0f724b603f2e85c53bee4e3a7cc3b33f016
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -890,4 +893,8 @@ const DocumentSchemesPage = () => {
   );
 };
 
+<<<<<<< HEAD
 export default DocumentSchemesPage;
+=======
+export default DocumentSchemesPage;
+>>>>>>> 4d83b0f724b603f2e85c53bee4e3a7cc3b33f016

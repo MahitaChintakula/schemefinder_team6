@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react';
 // import { useLanguage } from '../../contexts/LanguageContext';
 // import './HeroSection.css';
@@ -168,6 +169,8 @@
 
 // export default HeroSection;
 // import React from 'react';
+=======
+>>>>>>> 4d83b0f724b603f2e85c53bee4e3a7cc3b33f016
 import { TypeAnimation } from 'react-type-animation';
 import { useLanguage } from '../../contexts/LanguageContext';
 import './HeroSection.css';
@@ -286,4 +289,8 @@ const HeroSection = () => {
   );
 };
 
+<<<<<<< HEAD
 export default HeroSection;
+=======
+export default HeroSection;
+>>>>>>> 4d83b0f724b603f2e85c53bee4e3a7cc3b33f016
