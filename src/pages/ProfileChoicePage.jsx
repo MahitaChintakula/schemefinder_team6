@@ -29,8 +29,7 @@ const ProfileChoicePage = () => {
 
           <div
             className="choice-box"
-            // onClick={() =>
-            //   document.getElementById('documentInput').click()
+           
             // }
             onClick={() => navigate('/document-upload')}
           >
@@ -49,27 +48,7 @@ const ProfileChoicePage = () => {
             </p>
           </div>
 
-          {/* <input
-            type="file"
-            id="documentInput"
-            style={{ display: 'none' }}
-            accept=".pdf,.jpg,.jpeg,.png"
-
-            onChange={(e) => {
-
-              const file = e.target.files[0];
-
-              if (file) {
-
-                localStorage.setItem(
-                  'uploadedDocument',
-                  file.name
-                );
-
-                navigate('/document-upload');
-              }
-            }}
-          /> */}
+       
 
           <div
             className="choice-box"
