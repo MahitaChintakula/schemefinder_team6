@@ -39,7 +39,7 @@ const UserDetailsForm = () => {
   const [errors, setErrors] =
     useState({});
 
-  // Check login session
+  
   useEffect(() => {
 
     const isLoggedIn =
@@ -54,7 +54,7 @@ const UserDetailsForm = () => {
       return;
     }
 
-    // Auto fill user name
+    
     const currentUser = JSON.parse(
 
       localStorage.getItem(
@@ -86,7 +86,6 @@ const UserDetailsForm = () => {
       [name]: value,
     }));
 
-    // Clear error while typing
     if (errors[name]) {
 
       setErrors((prev) => ({
@@ -180,7 +179,7 @@ const UserDetailsForm = () => {
 
     try {
 
-      // Convert income
+      
       let incomeValue = 0;
 
       switch (
@@ -211,7 +210,7 @@ const UserDetailsForm = () => {
           incomeValue = 0;
       }
 
-      // Current logged in user
+     
       const currentUser =
         JSON.parse(
 
@@ -220,7 +219,7 @@ const UserDetailsForm = () => {
           )
         );
 
-      // Backend profile data
+      
       const profileData = {
 
         email:
@@ -255,7 +254,7 @@ const UserDetailsForm = () => {
         profileData
       );
 
-      // Save profile
+     
       const saveResponse =
         await saveProfile(
           profileData
@@ -266,7 +265,7 @@ const UserDetailsForm = () => {
         saveResponse
       );
 
-      // Match schemes
+     
       const response =
         await matchSchemes(
           profileData
@@ -279,7 +278,7 @@ const UserDetailsForm = () => {
 
       let matchedSchemes = [];
 
-      // Handle Lambda body response
+      
       if (
         response &&
         response.body
@@ -310,7 +309,7 @@ const UserDetailsForm = () => {
 
       setLoading(false);
 
-      // Navigate to results
+      
       navigate(
         '/scheme-results',
         {
@@ -506,7 +505,7 @@ const UserDetailsForm = () => {
 
           </div>
 
-          {/* State */}
+      
           <div className="form-group">
 
             <label>
@@ -535,7 +534,7 @@ const UserDetailsForm = () => {
 
           </div>
 
-          {/* Income */}
+          
           <div className="form-group">
 
             <label>
@@ -589,7 +588,7 @@ const UserDetailsForm = () => {
 
           </div>
 
-          {/* Occupation */}
+          
           <div className="form-group">
 
             <label>
@@ -639,7 +638,7 @@ const UserDetailsForm = () => {
 
           </div>
 
-          {/* Degree */}
+         
           {formData.occupation ===
             'student' && (
 
