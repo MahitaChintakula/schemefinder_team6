@@ -55,7 +55,7 @@ const HowItWorks = () => {
           <div className="cta-content">
             <h3>{t('howItWorks.cta.title')}</h3>
             <p>{t('howItWorks.cta.description')}</p>
-            {/* <button className="btn-cta">{t('howItWorks.cta.button')}</button> */}
+          
           </div>
         </div>
       </div>
