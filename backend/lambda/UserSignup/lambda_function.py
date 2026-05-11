@@ -1,5 +1,7 @@
+import bcrypt
 import json
 import boto3
+
 
 dynamodb = boto3.resource('dynamodb')
 
@@ -60,8 +62,7 @@ def lambda_handler(event, context):
                 'fullName':
                 body['fullName'],
 
-                'password':
-                body['password']
+                'password': bcrypt.hashpw(body['password'].encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
             }
         )
 
