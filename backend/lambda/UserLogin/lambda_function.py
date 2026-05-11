@@ -1,3 +1,4 @@
+import bcrypt
 import json
 import boto3
 
@@ -76,7 +77,7 @@ def lambda_handler(event, context):
         user = response['Item']
 
         # Password check
-        if user['password'] != password:
+       if not bcrypt.checkpw(password.encode('utf-8'), user['password'].encode('utf-8')):
 
             return {
 
