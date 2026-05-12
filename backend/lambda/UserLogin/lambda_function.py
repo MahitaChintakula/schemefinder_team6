@@ -8,7 +8,6 @@ table = dynamodb.Table('Users')
 
 def lambda_handler(event, context):
 
-    # CORS
     if event.get('httpMethod') == 'OPTIONS':
 
         return {
@@ -44,7 +43,6 @@ def lambda_handler(event, context):
 
         password = body['password']
 
-        # Check user
         response = table.get_item(
 
             Key={
@@ -76,8 +74,10 @@ def lambda_handler(event, context):
 
         user = response['Item']
 
-        # Password check
-       if not bcrypt.checkpw(password.encode('utf-8'), user['password'].encode('utf-8')):
+       if not bcrypt.checkpw(
+           password.encode('utf-8'), 
+           user['password'].encode('utf-8')
+       ):
 
             return {
 
